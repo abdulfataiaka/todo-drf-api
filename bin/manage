@@ -1,0 +1,13 @@
+#!/bin/bash
+
+ROOTDIR=$(dirname $(cd $(dirname $BASH_SOURCE) && pwd))
+
+cd $ROOTDIR
+
+source bin/venv
+
+cd project
+
+python manage.py $*
+
+deactivate
