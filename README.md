@@ -1,6 +1,15 @@
-# Introduction
+# About
 
 # Todo API
+
+# Resources
+
+DRF Documentation<br>
+https://www.django-rest-framework.org/
+
+Used Sections of the Documentation
+- Quick Start Tutorial
+- API Guides
 
 # Steps
 
@@ -8,6 +17,7 @@
 - Use environment variables for some settings with python-decouple
 - Register applications `rest_framework` and `api`
 - Run migrations
+- Create the list all todos endpoint
 
 # Folder Structure
 
