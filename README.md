@@ -2,6 +2,13 @@
 
 # Todo API
 
+# Steps
+
+- Setup the development environment
+- Use environment variables for some settings with python-decouple
+- Register applications `rest_framework` and `api`
+- Run migrations
+
 # Folder Structure
 
 # Components
@@ -33,6 +40,8 @@
 # Authentication
 
 # Authorization
+
+# Browsable API
 
 # Unit Tests
 

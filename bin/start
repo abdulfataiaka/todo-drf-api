@@ -1,0 +1,7 @@
+#!/bin/bash
+
+ROOTDIR=$(dirname $(cd $(dirname $BASH_SOURCE) && pwd))
+
+cd $ROOTDIR
+
+bin/manage runserver
