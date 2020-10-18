@@ -11,6 +11,13 @@ This will be a simple API that have the following endpoints
 - Update an exisiting todo item
 - Delete an existing todo item
 
+Todo Fields
+- id
+- title
+- status
+- created_at
+- updated_at
+
 While building out the above endpoints, we will ensure the following
 - Implement identity and access management
 - Write meaningful request tests
@@ -27,17 +34,13 @@ Used Sections of the Documentation
 - Quick Start Tutorial
 - API Guides
 
-# Steps
-
-- Setup the development environment
-- Use environment variables for some settings with python-decouple
-- Register applications `rest_framework` and `api`
-- Run migrations
-- Define all models and run migrations [*]
-- Create the list all todos endpoint
-- Create the action package for business logics
-
 # Folder Structure
+
+The folder structure is a single solution project for an application that has multiple interfaces such as
+- Database
+- API Interface
+- Payment Interface
+- Other Party Interface
 
 ### bin/
 
@@ -51,23 +54,32 @@ Contrary to the way Django names the project folder and the folder for holding c
 
 The project has been generically divided into the parts that may or may not depend on one another
 - Business
-- Library
 - Interfaces
 
 ### project/app
 
-This is the `Business` part of the whole structure. This is an actual Django application that will have to be registered on the project. We can say that this application will only be responsible for managing data and how these data will be manipulated, hence the models and actions.
-
-### project/lib
-
-This is the `Library` part of the whole structure. This is where all reusable and non-business logic codes used across all application will live. This is not a Django application, but will have to be taken along with applications that uses codes from here.
+This is the `Business` part of the whole structure. This component of the project can be seen as the core or engine of the single solution project which is responsible for managing data and actions. It will fully conform to design patterns to ensure extendability.
 
 ### project/{interfaces}
 
 Interfaces are components of the projects that will solely be responsible for receiving client requests, deligating the handling to an `app` action, generating a response from the output of the action and returning response back to the client.
 
-These interface will simply just define necessary views and url mappings making up the interface endpoints. The currently implemented interfaces within this project includes
+There are two types of interfaces, namely (1) Those the `app` depends on and (2) Those that depends on the `app`
+
+Interfaces that the `app` depends on
+- db
+
+Interfaces that depends on `app`
 - api
+
+# Steps
+
+- Setup the development environment
+- Use environment variables for some settings with python-decouple
+- Register applications `rest_framework` and `api`
+- Run migrations
+- Define all models and run migrations [*]
+- Create serializers for models
 
 # Components
 

@@ -1,0 +1,7 @@
+#!/bin/bash
+
+ROOTDIR=$(dirname $(cd $(dirname $BASH_SOURCE) && pwd))
+
+cd $ROOTDIR
+
+bin/manage createsuperuser --username admin --email admin@app.com
